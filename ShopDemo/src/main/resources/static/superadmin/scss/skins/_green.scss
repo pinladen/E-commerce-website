@@ -1,0 +1,195 @@
+﻿$white: #ffffff;
+$green-dark: #182973 !default;
+$green-darklight: #6f7b7d;
+$green-light: #e8e8e8;
+$green-primary: #29bd73 !default;
+$green-secondary: #00bcd2 !default;
+
+$ct-series-colors: (
+	a: #182973,
+	b: #29bd73,
+	c: #6bc196,
+	d: #a4d4bc,
+	e: #00bcd2,
+	f: #d17905,
+);
+
+.theme-green{
+
+    ::selection {
+        color: $white; 
+        background: $green-primary;
+    }
+    .page-loader-wrapper{
+        background: $green-primary;
+    }
+    .navbar-fixed-top {
+        background: $green-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $green-primary;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+            i{
+                color: $green-dark;
+            }
+        }
+
+        a{
+            color: $green-dark;            
+        }
+        
+        a:hover,
+        a:focus{
+            background: $green-dark;
+            color: $white;
+            i{
+                color: $white;
+            }
+        }
+
+        .has-arrow:after{
+            color: $green-light;
+        }
+    }
+    #left-sidebar{
+        background: $white;
+        .navbar-brand{
+            border-color: $green-light;
+            span{
+                color: $green-primary;
+            }
+        }
+        .user-account{
+            color: $green-dark;            
+            .user_div{
+                border-color: $green-light; 
+                .user-photo{
+                    border-color: $green-primary; 
+                }
+            }
+            .dropdown-menu{
+                background: $green-dark;
+                a{
+                    color: $green-light;
+                    &:hover{
+                        color: $green-primary;
+                        i{
+                            color: $green-primary;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {
+    
+            &:checked + span:before {
+                background: $green-primary;
+                border-color: $green-primary;
+            }
+        }
+    }
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $green-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $green-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $green-primary;
+        }        
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $green-primary;
+        border-color: $green-primary;
+        color:$white;
+    }
+    .auth-main{
+        &:after{
+            background: $green-primary;
+        }
+        &:before{
+            background: $green-dark;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $green-primary;
+            }
+            .done a{
+                background: $green-darklight;
+            }
+        }
+        .actions a{
+            background: $green-dark;
+        }
+    }
+    .maintenance{
+        background: $green-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $green-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $green-primary;
+    }
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

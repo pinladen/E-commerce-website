@@ -1,0 +1,175 @@
+﻿
+$white: #ffffff;
+$blue-dark: #303844 !default;
+$blue-darklight: #9da1a7;
+$blue-primary: #0e9be2 !default;
+$blue-secondary: #ffaf1d !default;
+
+$ct-series-colors: (
+	a: #303844,
+	b: #0e9be2,
+	c: #ffaf1d,
+	d: #02b5b2,
+	e: #767ee9,
+	f: #d17905,
+);
+
+.theme-blue{
+
+    ::selection {
+        color: $white; 
+        background: $blue-primary;
+    }
+    .page-loader-wrapper{
+        background: $blue-primary;
+    }
+    .navbar-fixed-top {
+        background: $blue-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $blue-secondary;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+            i{
+                color: $blue-darklight;
+            }
+            ul{
+                li.active{
+                    a{
+                        color: $blue-primary;
+                    }
+                }
+            }
+        }
+
+        a{
+            color: $blue-darklight;
+        }
+        
+        a:hover,
+        a:focus{
+            background: #2d3435;
+        }
+        .has-arrow:after{
+            color: $blue-secondary;
+        }
+    }
+    #left-sidebar{
+        background: $blue-dark;
+        .user-account{            
+            .user_div .user-photo{
+                border-color: $blue-secondary; 
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {
+    
+            &:checked + span:before {
+                background: $blue-primary;
+                border-color: $blue-primary;
+            }
+        }
+    }
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $blue-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $blue-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $blue-primary;
+        }        
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $blue-primary;
+        border-color: $blue-primary;
+        color:$white;
+    }
+    .auth-main{
+        &:after{
+            background: $blue-primary;
+        }
+        &:before{
+            background: $blue-dark;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $blue-primary;
+            }
+            .done a{
+                background: $blue-darklight;
+            }
+        }
+        .actions a{
+            background: $blue-secondary;
+        }
+    }
+    .maintenance{
+        background: $blue-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $blue-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $blue-primary;
+    }
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

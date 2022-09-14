@@ -1,0 +1,148 @@
+/* Authentication forms */
+
+
+.auth-main{
+    margin-top: 100px;
+    @include max-screen($break-large) {
+        margin-top: 50px;
+    }
+    @include max-screen($break-xsmall) {
+        margin-top: 20px;
+    }
+
+    &:before{
+        content: '';
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 31%;
+        height: 100%;
+        z-index: 0;
+
+        @include max-screen($break-xlarge) {
+            width: 26%;
+        }
+        @include max-screen($break-large) {
+            width: 28%;
+        }
+        @include max-screen($break-medium) {
+            width: 35%;
+        }
+        @include max-screen($break-xsmall) {
+            width: 100%;
+        }
+    }
+    &:after{
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .navbar{
+        margin-bottom: 80px;
+        padding: 0 0 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        justify-content: space-between;
+
+        @include max-screen($break-large) {
+            margin-bottom: 40px;
+        }
+        @include max-screen($break-medium) {
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand{
+            color: $col-white;
+        }
+        .nav-link{
+            padding-right: .5rem;
+            padding-left: .5rem;
+        }
+        
+    }
+
+    .auth_detail{
+        padding: 40px 0;
+        max-width: 360px;
+        @include max-screen($break-medium) {            
+            padding: 20px 0;
+        }
+
+        h2{
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: $font-weight-300;            
+            color: $col-white;
+
+            @include max-screen($break-medium) {
+                font-size: 35px;
+            }
+            @include max-screen($break-xsmall) {
+                font-size: 25px;
+            }
+        }
+        p{
+            font-size: 16px;
+            color: $col-white;
+        }
+        .social-links{
+            margin-top: 40px;
+        }
+    }
+
+    .form-auth-small {
+        .btn{
+            @extend .m-t-20;
+        }
+
+        .element-left {
+            float: left;
+        }
+
+        .element-right {
+            float: right;
+        }
+
+        .bottom {
+            @extend .m-t-20;
+            @extend .align-center;
+        }
+    }
+    
+    .lead {
+        @extend .m-t-5;
+        @extend .m-b-0;
+        font-size: 18px;
+    }
+
+    .helper-text {
+        color: $color-muted;
+        @extend .displayblock;
+    }
+
+    .btn-signin-social {
+        @extend .displayblock;
+        @extend .m-b-5;
+        padding: 10px 22px;
+        width: 100%;
+        background-color: $col-white;
+        border-color: $grey-200;
+
+        &:hover,
+        &:focus {
+            background-color: $grey-200;
+        }
+
+        i {
+            font-size: 16px;
+            margin: 5px;
+        }
+    }
+    @include max-screen($break-medium) {        
+        margin: 0 auto;
+    }
+}

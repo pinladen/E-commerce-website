@@ -1,0 +1,171 @@
+﻿$white: #ffffff;
+$blush-dark: #1b1f23 !default;
+$blush-darklight: #969696;
+$blush-primary: #e25985 !default;
+$blush-secondary: #00bcd2 !default;
+
+$ct-series-colors: (
+	a: #1b1f23,
+	b: #e25985,
+	c: #de7f9e,
+	d: #debac6,
+	e: #767ee9,
+	f: #d17905,
+);
+
+.theme-blush{
+
+    ::selection {
+        color: $white; 
+        background: $blush-primary;
+    }
+    .page-loader-wrapper{
+        background: $blush-primary;
+    }
+    .navbar-fixed-top {
+        background: $blush-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $blush-primary;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+            i{
+                color: $blush-darklight;
+            }
+            ul{
+                li.active{
+                    a{
+                        color: $blush-primary;
+                    }
+                }
+            }
+        }
+
+        a{
+            color: $blush-darklight;
+        }
+        
+        a:hover,
+        a:focus{
+            background: rgba($blush-primary, 0.1);
+        }
+    }
+    #left-sidebar{
+        background: $blush-dark;
+        .user-account{            
+            .user_div .user-photo{
+                border-color: $blush-primary; 
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {
+    
+            &:checked + span:before {
+                background: $blush-primary;
+                border-color: $blush-primary;
+            }
+        }
+    }
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $blush-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $blush-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $blush-primary;
+        }        
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $blush-primary;
+        border-color: $blush-primary;
+        color:$white;
+    }
+    .auth-main{
+        &:after{
+            background: $blush-primary;
+        }
+        &:before{
+            background: $blush-dark;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $blush-primary;
+            }
+            .done a{
+                background: $blush-darklight;
+            }
+        }
+        .actions a{
+            background: $blush-dark;
+        }
+    }
+    .maintenance{
+        background: $blush-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $blush-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $blush-primary;
+    }
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

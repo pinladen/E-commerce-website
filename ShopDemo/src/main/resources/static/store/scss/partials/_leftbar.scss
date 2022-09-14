@@ -1,0 +1,238 @@
+/* Side Bar Menu */
+
+#left-sidebar {
+	@include transition(all .3s ease-in-out);
+	@include box-shadow(0 3px 5px 0px rgba(0,0,0,.1));
+	width: $sidebar-width;
+	height: 100%;
+	float: left;
+	margin-top: 0;
+	position: fixed;
+	left: 0px;	
+	background-color: #2c2c38;
+    z-index: 9;    
+
+    overflow-y: scroll;
+    scrollbar-width: none; // Firefox /
+    -ms-overflow-style: none;  // IE 10+ /
+
+    &::-webkit-scrollbar { // WebKit /
+        width: 0px;
+    }
+	
+	@include max-screen($break-large) {
+		@include box-shadow(0 5px 10px 0px rgba(0,0,0,.2));
+		left: -$sidebar-width;
+	}
+	
+	.btn-toggle-offcanvas{
+		display: none;
+	}
+
+    .navbar-brand{
+		@extend .displayblock;
+        padding: 0 0 15px 0;
+        margin: 15px 20px 0 20px;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+		        
+        .logo{
+            width: 30px;
+        }
+        span{
+			@extend .inlineblock;
+			@extend .font-18;
+			@extend .m-l-10;
+			color: $grey-400;
+            vertical-align: middle;
+        }
+    }
+}
+
+.offcanvas-active{
+
+    #left-sidebar{
+		left:0;
+		
+		.btn-toggle-offcanvas{
+			display: block !important;
+		}
+	}
+}
+
+.layout-fullwidth #wrapper {
+
+	.navbar-fixed-top{
+		width: 100%;
+	}
+	#left-sidebar {
+		left: -$sidebar-width;
+
+		&.ps {
+			overflow: visible !important;
+		}
+	}
+
+	#main-content {
+		width: 100%;
+	}
+}
+
+.user-account {
+	@extend .align-center;	
+	color: $grey-400;
+	margin: 20px;	
+    
+    .user_div{
+		@include border-radius(90px);
+        border: 1px solid #404050;
+        padding: 8px;
+        display: inline-block;
+        border-radius:  90px;
+
+        .user-photo {
+			@include border-radius(90px);
+            width: 90px;
+            vertical-align: top;
+            border: 2px solid;
+        }
+    }
+	.user-name {
+		@extend .displayblock;		
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+	.dropdown{
+		@extend .displayblock;		
+		@extend .m-t-5;
+
+		.dropdown-menu{
+			border-radius: $border-radius-large;
+			transform: none !important;			
+			border: none;
+			box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.5);
+			padding: 15px;			
+			width: 100%;
+
+			li.divider{
+				border-bottom:1px solid rgba(255,255,255,.1);
+				margin: 10px 0; 
+			}
+
+			a{
+				@extend .displayblock;
+				@extend .font-14;
+				padding: 10px;
+				color: $grey-500;
+
+				&:hover{
+					color: $grey-800;
+					i{
+						color: $grey-800;
+					}
+				}
+
+				i{
+					@extend .m-r-10;
+					@extend .font-14;
+				}
+			}
+		}
+	}
+}
+
+.sidebar-nav {
+    margin: 0 20px;
+
+    ul{
+        @extend .padding-0;
+		@extend .margin-0;
+		list-style: none;
+    }
+
+	.metismenu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+
+		> li {
+            @extend .p-b-5;
+            -webkit-box-flex: 1;
+			-ms-flex: 1 1 0%;
+			flex: 1 1 0%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			position: relative;
+
+			&.active > a {				
+				background-color: #f1f1f1;
+			}
+
+			.active a {
+				font-weight: $font-weight-700;
+			}
+
+			i {
+				@extend .inlineblock;
+				position: relative;
+				top: 2px;
+				width: 31px;    			
+			}
+		}
+
+		a {
+			@include transition(all .3s ease-out);
+			@extend .displayblock;
+			@extend .font-14;
+			color: $grey-500;
+			border-radius: $border-radius-small;
+			position: relative;			
+			padding: 13px 15px;
+			outline-width: 0;           
+		}
+
+		ul a {            
+            color: $grey-600;
+			font-size: $font-size;
+			padding: 10px 15px 10px 47px;
+            position: relative;
+
+            &::before{
+                content: '--';
+                position: absolute;
+                left: 19px;
+            }
+		}
+		
+		ul ul a {
+			padding: 10px 15px 10px 70px;
+		}
+
+		ul.collapse a {
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		a {
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				background: #24242f;
+			}
+		}		
+	}
+}

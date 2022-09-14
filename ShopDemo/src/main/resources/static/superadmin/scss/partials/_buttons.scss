@@ -1,0 +1,8 @@
+.btn{
+	font-size: $font-size;
+	&.btn-round{
+        @include border-radius(50px);
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+	}
+}

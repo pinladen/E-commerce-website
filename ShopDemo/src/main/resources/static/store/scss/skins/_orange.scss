@@ -1,0 +1,195 @@
+﻿$white: #ffffff;
+$orange-dark: #380e47 !default;
+$orange-darklight: #6f7b7d;
+$orange-light: #e8e8e8;
+$orange-primary: #feb800 !default;
+$orange-secondary: #1a79ee !default;
+
+$ct-series-colors: (
+	a: #380e47,
+	b: #feb800,
+	c: #ffd974,
+	d: #e4dbc2,
+	e: #1a79ee,
+	f: #2ac151,
+);
+
+.theme-orange{
+
+    ::selection {
+        color: $white; 
+        background: $orange-primary;
+    }
+    .page-loader-wrapper{
+        background: $orange-primary;
+    }
+    .navbar-fixed-top {
+        background: $orange-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $orange-dark;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+            i{
+                color: $orange-dark;
+            }
+        }
+
+        a{
+            color: $orange-dark;
+        }
+        
+        a:hover,
+        a:focus{
+            background: $orange-primary;
+            color: $white;
+            i{
+                color: $white;
+            }
+        }
+
+        .has-arrow:after{
+            color: $orange-light;
+        }
+    }
+    #left-sidebar{
+        background: $white;
+        .navbar-brand{
+            border-color: $orange-light;
+            span{
+                color: $orange-primary;
+            }
+        }
+        .user-account{
+            color: $orange-dark;
+            .user_div{
+                border-color: $orange-light; 
+                .user-photo{
+                    border-color: $orange-primary; 
+                }
+            }
+            .dropdown-menu{
+                background: $orange-dark;
+                a{
+                    color: $orange-light;
+                    &:hover{
+                        color: $orange-primary;
+                        i{
+                            color: $orange-primary;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {
+    
+            &:checked + span:before {
+                background: $orange-primary;
+                border-color: $orange-primary;
+            }
+        }
+    }
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $orange-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $orange-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $orange-primary;
+        }        
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $orange-primary;
+        border-color: $orange-primary;
+        color:$white;
+    }
+    .auth-main{
+        &:after{
+            background: $orange-primary;
+        }
+        &:before{
+            background: $orange-dark;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $orange-primary;
+            }
+            .done a{
+                background: $orange-darklight;
+            }
+        }
+        .actions a{
+            background: $orange-dark;
+        }
+    }
+    .maintenance{
+        background: $orange-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $orange-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $orange-primary;
+    }
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

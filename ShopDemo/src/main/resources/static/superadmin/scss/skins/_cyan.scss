@@ -1,0 +1,171 @@
+﻿$white: #ffffff;
+$cyan-dark: #242a2b !default;
+$cyan-darklight: #6f7b7d;
+$cyan-primary: #00bcd2 !default;
+$cyan-secondary: #00bcd2 !default;
+
+$ct-series-colors: (
+	a: #394344,
+	b: #00bcd2,
+	c: #5ed3e1,
+	d: #97cad0,
+	e: #394344,
+	f: #d17905,
+);
+
+.theme-cyan{
+
+    ::selection {
+        color: $white; 
+        background: $cyan-primary;
+    }
+    .page-loader-wrapper{
+        background: $cyan-primary;
+    }
+    .navbar-fixed-top {
+        background: $cyan-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $cyan-primary;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+            i{
+                color: $cyan-darklight;
+            }
+            ul{
+                li.active{
+                    a{
+                        color: $cyan-primary;
+                    }
+                }
+            }
+        }
+
+        a{
+            color: $cyan-darklight;
+        }
+        
+        a:hover,
+        a:focus{
+            background: #2d3435;
+        }
+    }
+    #left-sidebar{
+        background: $cyan-dark;
+        .user-account{            
+            .user_div .user-photo{
+                border-color: $cyan-primary; 
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {
+    
+            &:checked + span:before {
+                background: $cyan-primary;
+                border-color: $cyan-primary;
+            }
+        }
+    }
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $cyan-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $cyan-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $cyan-primary;
+        }        
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $cyan-primary;
+        border-color: $cyan-primary;
+        color:$white;
+    }
+    .auth-main{
+        &:after{
+            background: $cyan-primary;
+        }
+        &:before{
+            background: $cyan-dark;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $cyan-primary;
+            }
+            .done a{
+                background: $cyan-darklight;
+            }
+        }
+        .actions a{
+            background: $cyan-secondary;
+        }
+    }
+    .maintenance{
+        background: $cyan-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $cyan-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $cyan-primary;
+    }    
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

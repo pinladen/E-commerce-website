@@ -1,0 +1,175 @@
+﻿$white: #ffffff;
+$purple-dark: #292c3f !default;
+$purple-darklight: #6f7b7d;
+$purple-light: #e8e8e8;
+$purple-primary: #6462ef !default;
+$purple-secondary: #00bcd2 !default;
+
+$ct-series-colors: (
+	a: #292c3f,
+	b: #6462ef,
+	c: #8f8de7,
+	d: #b4b3e4,
+	e: #00bcd2,
+	f: #d17905,
+);
+
+.theme-purple{
+
+    ::selection {
+        color: $white; 
+        background: $purple-primary;
+    }
+    .page-loader-wrapper{
+        background: $purple-primary;
+    }
+    .navbar-fixed-top {
+        background: $purple-primary;
+
+        .form-control{
+            border: 0;
+        }
+
+        .icon-menu i{
+            color: $white;
+        }
+    }    
+    .sidebar-nav .metismenu{
+        >li{
+            &.active>a{
+                background: $purple-primary;
+                color: $white;
+            }
+        }
+
+        a{
+            color: $purple-dark;
+        }
+        
+        a:hover,
+        a:focus{
+            background: $purple-dark;
+            color: $purple-light;
+        }
+    }
+    #left-sidebar{
+        background: $white;
+        .navbar-brand{
+            border-color: $purple-light;
+            span{
+                color: $purple-primary;
+            }
+        }
+        .user-account{
+            color: $purple-dark;            
+            .user_div{
+                border-color: $purple-light; 
+                .user-photo{
+                    border-color: $purple-primary;
+                }
+            }
+            .dropdown-menu{
+                background: $purple-primary;
+                a{
+                    color: $purple-light;
+                }
+            }
+        }
+    }
+    .fancy-checkbox {
+        input[type="checkbox"] {    
+            &:checked + span:before {
+                background: $purple-primary;
+                border-color: $purple-primary;
+            }
+        }
+    }    
+    .chat-widget {
+        li {
+            &.right {
+                
+                .chat-info {
+                    background: $purple-primary;
+                    color: $white;
+    
+                    &:before{
+                        border-left: 10px solid $purple-primary;
+                    }
+                }
+            }
+        }
+    }
+    .right_chat li a:hover{
+        .media-object {
+            border-color: $purple-primary;
+        }        
+    }
+    .auth-main{
+        &:after{
+            background: $purple-primary;
+        }
+        &:before{
+            background: #17191c;
+        }
+    }
+    .wizard{
+        >.steps{
+            .current a{
+                background: $purple-primary;
+            }
+            .done a{
+                background: $purple-darklight;
+            }
+        }
+        .actions a{
+            background:#feb800;
+        }
+    }
+    .fc .fc-view-container .fc-view.fc-basic-view>table>thead tr th.fc-widget-header{
+        background: $purple-primary;
+        border-color: $purple-primary;
+        color: $white;
+    }
+    .maintenance{
+        background: $purple-primary;
+        >div{
+            background: $white;
+        }
+    }
+    .noUi-connect{
+        background: $purple-primary;
+    }
+
+    .blog-page .single_post .footer .stats li a:hover{
+        color: $purple-primary;
+    }    
+
+    @each $series-name, $series-color in $ct-series-colors {
+        .ct-series-#{$series-name} {
+            .ct-line,
+            .ct-bar,
+            .ct-point {
+                stroke: $series-color;
+            }
+
+            .ct-area, 
+            .ct-slice-donut-solid, 
+            .ct-slice-pie,
+            .ct-bar {
+                fill: $series-color;
+            }
+        }
+    }
+    .ct-legend {
+
+        $i: 0;
+        @each $series-name, $series-color in $ct-series-colors {
+            .ct-series-#{$i}:before {
+                background-color: $series-color;
+                border-color: $series-color;
+            }
+
+            $i: $i + 1;
+        }
+    }
+}

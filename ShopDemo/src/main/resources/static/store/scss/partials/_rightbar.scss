@@ -1,0 +1,136 @@
+.rightbar{
+    @include box-shadow(0 5px 10px 0px rgba(0,0,0,.3));
+    @include transition(all .3s ease-in-out);
+    position: fixed;
+    right: -320px;
+    top: 0;
+    width: 300px;
+    background: $col-white;
+    height: 100vh;
+    z-index: 13;
+    padding: 15px 20px;
+
+    @include max-screen($break-large) {
+        width: 280px;
+    }
+
+    &.open{
+        right: 0;
+    }
+
+    .nav{
+        @extend .m-b-15;
+        @extend .p-b-15;
+        border-bottom: 1px solid $grey-300;
+    }
+
+    .card{
+        box-shadow: none;
+        border: 0;
+
+        h6{
+            font-size: 15px;
+            @extend .m-b-10;
+        }
+    }
+}
+
+ul.choose-skin{
+    
+    @extend .m-b-0;
+    
+	li{		
+        @extend .inlineblock;
+		
+		div{
+            @include transition(all .3s ease-in-out);
+            @include border-radius(3px);
+            @extend .inlineblock;
+            @extend .m-r-10;
+            @extend .m-b-10;
+            height: 40px;
+            width: 55px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+
+            &:before{
+                content: '';
+                height: 5px;
+                width: 40px;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            &:hover{
+                cursor: pointer;
+                box-shadow: 0 2px 8px 0 rgba(0,0,0,0.3);
+            }
+
+			&.purple{
+                border-left: 15px solid $col-white;
+                background: $grey-300;
+
+                &::before{
+                    background: $purple;
+                }                
+            }
+            &.green{
+                border-left: 15px solid $col-white;
+                background: $grey-300;
+
+                &::before{
+                    background: $green;
+                }
+			}
+            &.orange{
+                border-left: 15px solid $col-white;
+                background: $grey-300;
+
+                &::before{
+                    background: $orange;
+                }
+            }
+            
+			&.blue{
+                border-left: 15px solid $grey-800;
+                background: $grey-300;
+
+                &::before{
+                    background: $blue;
+                }
+			}
+			&.cyan{
+                border-left: 15px solid $grey-800;
+                background: $grey-300;
+
+                &::before{
+                    background: $cyan;
+                }
+			}			
+			&.blush{
+                border-left: 15px solid $grey-800;
+                background: $grey-300;
+
+                &::before{
+                    background: $blush;
+                }
+            }
+        }
+
+        &.active{
+            div{
+                &::after{
+                    position: absolute;
+                    color: $grey-800;
+                    font-size: 12px;
+                    top: 15px;
+                    left: 15px;
+                    content: '\f00c';
+                    font-family: 'FontAwesome';
+                }
+            }
+        }
+	}
+}
